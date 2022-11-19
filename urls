@@ -1,0 +1,55 @@
+AWS CLI: I downloaded the AWS CLI from the official Amazon website using the command.
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+
+AWS CloudWatch Agent
+wget https://s3.eu-west-2.amazonaws.com/amazoncloudwatch-agent-eu-west-2/redhat/amd64/latest/amazon-cloudwatch-agent.rpm
+
+AWS ECS Agent
+wget https://s3.eu-west-2.amazonaws.com/amazon-ecs-agent-eu-west-2/amazon-ecs-init-latest.x86_64.rpm
+
+AWS SSM Agent
+sudo dnf install -y https://s3.amazonaws.com/ec2-downloads-windows/SSMAgent/latest/linux_amd64/amazon-ssm-agent.rpm
+
+AWS EFS Utils
+git clone https://github.com/aws/efs-utils
+
+Python pip
+wget https://bootstrap.pypa.io/pip/3.6/get-pip.py -O /tmp/get-pip.py
+
+Docker-compose
+curl -s https://api.github.com/repos/docker/compose/releases/latest | grep browser_download_url  | grep docker-compose-linux-x86_64 | cut -d '"' -f 4 | wget -qi -
+
+Elasticsearch 7.2
+wget https://artifacts.elastic.co/packages/7.x/yum/7.2.0/elasticsearch-7.2.0-x86_64.rpm
+Kibana
+https://s3.eu-west-2.amazonaws.com/dragfly.co/Kibana.tar.gz
+Logstash
+https://s3.eu-west-2.amazonaws.com/dragfly.co/Logstash
+
+Mongo DB 3.4.24 - I created a .repo file to install MongoDB directly from yum/dnf, this is the content:
+
+[mongodb-org-3.4]
+name=MongoDB Repository
+baseurl=https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/3.4/x86_64/
+gpgcheck=1
+enabled=1
+gpgkey=https://www.mongodb.org/static/pgp/server-3.4.asc
+
+Nagios NRPE 4.0.3
+wget https://github.com/NagiosEnterprises/nrpe/releases/download/nrpe-4.0.3/nrpe-4.0.3.tar.gz
+
+Nagios Plugins 2.3.3
+wget http://nagios-plugins.org/download/nagios-plugins-2.3.3.tar.gz
+
+Nagios Plugins
+wget https://raw.githubusercontent.com/justintime/nagios-plugins/master/check_mem/check_mem.pl
+wget https://raw.githubusercontent.com/HariSekhon/Nagios-Plugins/master/check_zookeeper.pl
+wget https://www.claudiokuenzler.com/monitoring-plugins/check_es_system.sh
+wget https://raw.githubusercontent.com/sokecillo/nagios-check_mongodb/master/check_mongodb
+wget https://raw.githubusercontent.com/timdaman/check_docker/master/check_docker/check_docker.py
+
+Kafka/Zookeeper 3.2.0
+curl  https://dlcdn.apache.org/kafka/3.2.0/kafka_2.13-3.2.0.tgz -O
+
+Flink 1.11.1
+https://s3.eu-west-2.amazonaws.com/dragfly.co/Flink-1.11.1.tar.gz
